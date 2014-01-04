@@ -27,7 +27,7 @@ alias g='git'
 alias gc='git commit'
 alias gp='git pull'
 alias gs='git status'
-alias gy='git sync'
+alias gy='git pull && git push'
 
 # s3cmd aliases
 alias s3sunlight='s3cmd -c ~/.s3cmd/sunlight'
