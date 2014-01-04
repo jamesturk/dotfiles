@@ -12,6 +12,8 @@ alias l='ls -CF'
 
 # new commands
 alias quickweb='python -m SimpleHTTPServer'
+alias rmpyc='find -name "*.pyc" -delete'
+alias rmpycache='find -name "__pycache__" -delete'
 
 # short names
 alias py='ipython --no-banner --no-confirm-exit -i'
