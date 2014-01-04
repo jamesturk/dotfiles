@@ -28,7 +28,7 @@ set virtualedit=block     " allow editing in virtual space in block mode
 set directory=~/.vimtmp   " keep all tempfiles in same dir
 " work with X11 clipboard(?)
 set clipboard=unnamedplus
-set colorcolumn=80
+set colorcolumn=100
 
 """ color scheme
 set t_Co=256
