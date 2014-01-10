@@ -71,5 +71,5 @@ out = '\n'.join([
 	changed,
 	untracked,
 	clean])
-print(out)
+print(str(out))
 
