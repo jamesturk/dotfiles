@@ -2,12 +2,11 @@
 import os
 import glob
 
-def main():
-    dfdir = os.path.abspath('dotfiles/.*')
+def link(dir, dfdir):
     for df in glob.glob(dfdir):
-        if df.endswith('.git'):
+        if df.endswith(('.git', '.config')):
             continue
-        goodpath = os.path.join(os.path.expanduser('~/'), os.path.basename(df))
+        goodpath = os.path.join(dir, os.path.basename(df))
         if os.path.exists(goodpath):
             if os.path.samefile(df, goodpath):
                 pass
@@ -18,4 +17,5 @@ def main():
             os.symlink(df, goodpath)
 
 if __name__ == '__main__':
-    main()
+    link(os.path.expanduser('~/'), os.path.abspath('dotfiles/.*'))
+    link(os.path.expanduser('~/.config/'), os.path.abspath('dotfiles/.config/*'))
