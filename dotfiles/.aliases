@@ -22,7 +22,6 @@ alias open='gnome-open'
 alias :e='vim'
 
 # git stuff
-#alias git='hub'
 alias g='git'
 alias gc='git commit'
 alias gp='git pull'
@@ -32,9 +31,6 @@ alias gy='git pull && git push'
 # s3cmd aliases
 alias s3sunlight='s3cmd -c ~/.s3cmd/sunlight'
 alias s3personal='s3cmd -c ~/.s3cmd/personal'
-
-# personal sundrop
-alias jdrop='sundrop --set=SUNDROP_CONFIG=~/.sundrop-personal'
 
 # command replacements
 alias tree='tree -A -I "*.pyc|*~"'
