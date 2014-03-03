@@ -5,9 +5,4 @@ dotfiles/.s3cmd
 dotfiles/.ssh
 dotfiles/.sundrop*
 dotfiles/.vim/.netrwhist
-dotfiles/.xmonad/xmonad-x86*
-dotfiles/.xmonad/xmonad.errors
-dotfiles/.xmonad/xmonad.hi
-dotfiles/.xmonad/xmonad.o
 vault.kdb
-_old/

@@ -13,9 +13,6 @@
     ui = auto
 [push]
     default = tracking
-#[branch "master"]
-#    remote = origin
-#    merge = refs/heads/master
 [alias]
     co = checkout
     graph = log --oneline --decorate --graph --branches
@@ -28,4 +25,4 @@
     sync = !legit sync \"$@\"
     publish = !legit publish \"$@\"
     graft = !legit graft \"$@\"
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
