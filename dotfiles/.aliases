@@ -16,7 +16,7 @@ alias rmpyc='find -name "*.pyc" -delete'
 alias rmpycache='find -name "__pycache__" -delete'
 
 # short names
-alias py='ipython --no-banner --no-confirm-exit -i'
+alias py='ipython`python -c "import sys; print(\"3\" if sys.version_info[0] == 3 else \"\")"` --no-banner --no-confirm-exit -i'
 alias ack='ack-grep'
 alias open='gnome-open'
 alias :e='vim'
