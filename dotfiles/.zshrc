@@ -51,7 +51,7 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 # zstyle ':completion:*:*:git:*' commands 'base'
 
 # external files
-source /etc/bash_completion.d/virtualenvwrapper
+source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
 source /etc/zsh_command_not_found
 source ~/.aliases
 ZSH_THEME_GIT_PROMPT_NOCACHE=true
@@ -71,4 +71,4 @@ export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_REQUIRE_VIRTUALENV=true
 export _JAVA_AWT_WM_NONREPARENTING=1
 export GDK_NATIVE_WINDOWS=true
-export GOPATH=/home/james/code/mygo/
+export GOPATH=/home/james/code/go/

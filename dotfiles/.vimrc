@@ -1,3 +1,13 @@
+""" Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'fatih/vim-go'
+call vundle#end()
+filetype plugin indent on
+
 """ tab settings, 4 space tabs, always.
 set tabstop=4
 set shiftwidth=4
@@ -25,7 +35,7 @@ set wildmenu     " nice autocomplete menu
 set list         " show whitespace
 set listchars=tab:».,trail:\ 
 set virtualedit=block     " allow editing in virtual space in block mode
-set directory=~/.vimtmp   " keep all tempfiles in same dir
+"set directory=~/.vimtmp   " keep all tempfiles in same dir
 " work with X11 clipboard(?)
 set clipboard=unnamedplus
 set colorcolumn=100
