@@ -5,6 +5,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'fatih/vim-go'
+Plugin 'kien/ctrlp.vim'
+Plugin 'klen/python-mode'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
 
@@ -33,12 +37,16 @@ set incsearch    " highlight as we search
 set autochdir    " set pwd to local file, so edit paths are relative
 set wildmenu     " nice autocomplete menu
 set list         " show whitespace
-set listchars=tab:».,trail:\ 
+set listchars=tab:»\ ,trail:\ 
 set virtualedit=block     " allow editing in virtual space in block mode
 "set directory=~/.vimtmp   " keep all tempfiles in same dir
 " work with X11 clipboard(?)
 set clipboard=unnamedplus
 set colorcolumn=100
+
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
 
 """ color scheme
 set t_Co=256
