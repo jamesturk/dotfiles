@@ -26,3 +26,6 @@
     publish = !legit publish \"$@\"
     graft = !legit graft \"$@\"
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    pr = "!f() { git fetch origin refs/pull/$1/head:pr/$1; git checkout pr/$1; git merge master; }; f"
+    cleanup = "!f() { git branch -D `git branch | grep pr`; }; f"
+    good = "!f() { x=$(git rev-parse --abbrev-ref HEAD); git checkout master; git merge $x; }; f"
