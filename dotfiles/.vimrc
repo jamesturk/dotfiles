@@ -44,6 +44,14 @@ set virtualedit=block     " allow editing in virtual space in block mode
 set clipboard=unnamedplus
 set colorcolumn=100
 
+let g:pymode_options_max_line_length = 99
+let g:pymode_folding = 0
+let g:pymode_doc = 0
+let g:pymode_virtualenv = 0
+let g:pymode_lint_on_write = 0
+let g:pymode_rope = 0
+
+
 if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j " Delete comment character when joining commented lines
 endif
