@@ -24,6 +24,7 @@ alias :e='vim'
 
 # command replacements
 alias tree='tree -A -I "*.pyc|*~"'
+alias tmux='tmux -2'
 
 # git stuff
 alias g='git'
