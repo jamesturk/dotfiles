@@ -12,6 +12,9 @@ Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
 
+""" map ;; to <Esc>
+imap ;; <Esc>
+
 """ tab settings, 4 space tabs, always.
 set tabstop=4
 set shiftwidth=4
