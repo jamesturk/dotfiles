@@ -15,6 +15,7 @@ sudo aptitude install \
     zsh vim-nox exuberant-ctags git tmux \
     nautilus-dropbox meld gitg \
     ack-grep tree s3cmd mosh \
+    sysdig \
     gcolor2 libgnome2-bin \
     awesome awesome-extra \
     xfonts-terminus fonts-droid

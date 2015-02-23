@@ -9,6 +9,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'int3/vim-extradite'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 call vundle#end()
