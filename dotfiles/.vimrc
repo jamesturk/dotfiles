@@ -44,6 +44,7 @@ set autochdir    " set pwd to local file, so edit paths are relative
 set wildmenu     " nice autocomplete menu
 set list         " show whitespace
 set listchars=tab:»\ ,trail:\ 
+autocmd filetype go set listchars=tab:\ \ ,trail:\ 
 set virtualedit=block     " allow editing in virtual space in block mode
 "set directory=~/.vimtmp   " keep all tempfiles in same dir
 " work with X11 clipboard(?)

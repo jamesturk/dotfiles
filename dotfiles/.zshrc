@@ -65,7 +65,7 @@ PROMPT='%F{blue}%~%f$(git_super_status)$ '
 # various exports
 export EDITOR=vim
 export GPGKEY=876302FC
-export PATH=${PATH}:/usr/local/bin/:~/.bin/
+export PATH=${PATH}:/usr/local/bin/:~/.bin/:~/code/go/bin/
 export WORKON_HOME=$HOME/.virtualenvs
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_REQUIRE_VIRTUALENV=true
