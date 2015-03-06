@@ -12,6 +12,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'int3/vim-extradite'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 filetype plugin indent on
 
