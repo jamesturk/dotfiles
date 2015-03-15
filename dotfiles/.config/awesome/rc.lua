@@ -307,12 +307,10 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
+                     size_hints_honor = false,
                      buttons = clientbuttons } },
-    { rule = { class = "MPlayer" }, properties = { floating = true } },
     { rule = { class = "pinentry" }, properties = { floating = true } },
     { rule = { class = "gimp" }, properties = { floating = true } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" }, properties = { tag = tags[1][2] } },
 }
 -- }}}
 
@@ -345,4 +343,8 @@ end)
 
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+--awful.util.spawn_with_shell("/usr/lib/policykit0-gnome/polkit-gnome-authentication-agent-1")
+awful.util.spawn_with_shell("run_once nm-applet")
+
 -- }}}
