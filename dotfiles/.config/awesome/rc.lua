@@ -5,6 +5,7 @@ require("beautiful")
 require("naughty")
 require("debian.menu")
 require("battery")
+require("volume")
 
 _awesome_quit = awesome.quit
 awesome.quit = function()
@@ -128,6 +129,7 @@ batterytimer = timer({ timeout = 30 })
 batterytimer:add_signal("timeout", function() batterywidget.text = batteryInfo() end)
 batterytimer:start()
 
+
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt({ layout = awful.widget.layout.horizontal.leftright })
@@ -159,6 +161,7 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
+        volume_widget,
         batterywidget,
         s == 1 and mysystray or nil,
         mytasklist[s],
@@ -232,7 +235,22 @@ globalkeys = awful.util.table.join(
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
-              end)
+              end),
+
+    -- Volume
+    awful.key({ }, "XF86AudioRaiseVolume", function ()
+        awful.util.spawn("amixer set Master 9%+", false)
+        update_volume(volume_widget)
+     end),
+    awful.key({ }, "XF86AudioLowerVolume", function ()
+        awful.util.spawn("amixer set Master 9%-", false)
+        update_volume(volume_widget)
+    end),
+    awful.key({ }, "XF86AudioMute", function ()
+        awful.util.spawn("amixer -D pulse set Master 1+ toggle", false)
+        update_volume(volume_widget)
+    end)
+
 )
 
 clientkeys = awful.util.table.join(
