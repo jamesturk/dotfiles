@@ -238,11 +238,11 @@ globalkeys = awful.util.table.join(
 
     -- Volume
     awful.key({ }, "XF86AudioRaiseVolume", function ()
-        awful.util.spawn("amixer set Master 9%+", false)
+        awful.util.spawn("amixer -D pulse set Master 9%+", false)
         update_volume(volume_widget)
      end),
     awful.key({ }, "XF86AudioLowerVolume", function ()
-        awful.util.spawn("amixer set Master 9%-", false)
+        awful.util.spawn("amixer -D pulse set Master 9%-", false)
         update_volume(volume_widget)
     end),
     awful.key({ }, "XF86AudioMute", function ()
@@ -366,6 +366,7 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 
 --awful.util.spawn_with_shell("/usr/lib/policykit0-gnome/polkit-gnome-authentication-agent-1")
 awful.util.spawn_with_shell("run_once nm-applet")
-awful.util.spawn_with_shell("run_once xscreensaver")
+awful.util.spawn_with_shell("run_once xscreensaver -nosplash")
+awful.util.spawn_with_shell("run_once dropbox start")
 
 -- }}}

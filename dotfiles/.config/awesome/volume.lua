@@ -1,7 +1,7 @@
 volume_widget = widget({ type = "textbox", name = "tb_volume", align = "right" })
 
 function update_volume(widget)
-    local fd = io.popen("amixer sget Master")
+    local fd = io.popen("amixer -D pulse sget Master")
     local status = fd:read("*all")
     fd:close()
 
