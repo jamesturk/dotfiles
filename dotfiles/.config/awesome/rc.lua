@@ -51,10 +51,6 @@ editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -365,8 +361,19 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 --awful.util.spawn_with_shell("/usr/lib/policykit0-gnome/polkit-gnome-authentication-agent-1")
-awful.util.spawn_with_shell("run_once nm-applet")
-awful.util.spawn_with_shell("run_once xscreensaver -nosplash")
-awful.util.spawn_with_shell("run_once dropbox start")
+
+function run_once(cmd)
+  findme = cmd
+  firstspace = cmd:find(" ")
+  if firstspace then
+    findme = cmd:sub(0, firstspace-1)
+  end
+  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+end
 
 -- }}}
+
+run_once("nm-applet")
+run_once("xscreensaver -nosplash")
+awful.util.spawn_with_shell("dropbox start")
+
