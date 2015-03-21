@@ -9,18 +9,22 @@ function batteryInfo()
   local fac = io.open('/sys/class/power_supply/AC/online')
   local fcur0 = io.open("/sys/class/power_supply/BAT0/energy_now")
   local fcap0 = io.open("/sys/class/power_supply/BAT0/energy_full")
-  local fcur1 = io.open("/sys/class/power_supply/BAT1/energy_now")
-  local fcap1 = io.open("/sys/class/power_supply/BAT1/energy_full")
+  if not fcur0 then
+      fcur0 = io.open("/sys/class/power_supply/BAT0/charge_now")
+      fcap0 = io.open("/sys/class/power_supply/BAT0/charge_full")
+  end
   ac = fac:read()
   cur0 = fcur0:read()
   cap0 = fcap0:read()
   fac:close()
   fcur0:close()
   fcap0:close()
+
+  local fcur1 = io.open("/sys/class/power_supply/BAT1/energy_now")
+  local fcap1 = io.open("/sys/class/power_supply/BAT1/energy_full")
   local battery0 = math.floor(cur0 * 100 / cap0)
   local battery1 = nil
-
-  if(fcur1) then
+  if fcur1  then
       cur1 = fcur1:read()
       cap1 = fcap1:read()
       fcur1:close()
