@@ -1,8 +1,5 @@
 dotfiles/.gnupg
 dotfiles/.irssi
-dotfiles/.pypirc
 dotfiles/.s3cmd
 dotfiles/.ssh
-dotfiles/.sundrop*
 dotfiles/.vim/.netrwhist
-vault.kdb
