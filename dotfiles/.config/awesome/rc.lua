@@ -247,7 +247,9 @@ globalkeys = awful.util.table.join(
     end),
 
     -- Screensaver
-    awful.key({ modkey,           }, "Escape", function () awful.util.spawn("xscreensaver-command -lock") end)
+    awful.key({ modkey,           }, "Escape", function ()
+        awful.util.spawn("xscreensaver-command -lock")
+    end)
 
 )
 
@@ -374,6 +376,7 @@ end
 -- }}}
 
 run_once("nm-applet")
+run_once("xfce4-power-manager")
 run_once("xscreensaver -nosplash")
 awful.util.spawn_with_shell("dropbox start")
 
