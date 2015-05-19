@@ -29,7 +29,7 @@ function batteryInfo()
       cap1 = fcap1:read()
       fcur1:close()
       fcap1:close()
-      local battery1 = math.floor(cur1 * 100 / cap1)
+      battery1 = math.floor(cur1 * 100 / cap1)
   end
 
   if ac:match("1") then
