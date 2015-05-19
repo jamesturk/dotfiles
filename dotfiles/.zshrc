@@ -65,12 +65,13 @@ PROMPT='%F{blue}%~%f$(git_super_status)$ '
 # various exports
 export EDITOR=vim
 export GPGKEY=876302FC
-export PATH=${PATH}:/usr/local/bin/:~/.bin/:~/code/go/bin/
+export PATH=${PATH}:/usr/local/bin/:~/.bin/:~/code/go/bin/:/usr/local/texlive/2014/bin/x86_64-linux
 export WORKON_HOME=$HOME/.virtualenvs
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_REQUIRE_VIRTUALENV=true
 export _JAVA_AWT_WM_NONREPARENTING=1
 export GDK_NATIVE_WINDOWS=true
+export GOROOT=/usr/lib/go/
 export GOPATH=/home/james/code/go/
 
 # added by travis gem
