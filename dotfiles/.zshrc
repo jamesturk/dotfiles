@@ -51,7 +51,7 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 # zstyle ':completion:*:*:git:*' commands 'base'
 
 # external files
-source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
+#source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
 source /etc/zsh_command_not_found
 source ~/.aliases
 ZSH_THEME_GIT_PROMPT_NOCACHE=true

@@ -59,7 +59,7 @@ let g:pymode_virtualenv = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_rope = 0
 
-let g:notes_directories = ['~/Dropbox/notes']
+"let g:notes_directories = ['~/Dropbox/notes']
 let g:notes_suffix = '.txt'
 
 if v:version > 703 || v:version == 703 && has("patch541")
