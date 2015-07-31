@@ -13,6 +13,9 @@ Plugin 'int3/vim-extradite'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/html5.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -81,6 +84,8 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd BufRead,BufNewFile *.json setfiletype json
 autocmd BufRead,BufNewFile *.{md,markdown} setfiletype markdown
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
 "autocmd FileType python set complete+=k/home/james/.vim/pydiction/pydiction iskeyword+=.
 "autocmd FileType python highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "autocmd FileType python match OverLength /\%80v.\+/
@@ -91,6 +96,7 @@ let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
 " python specific settings, highlight everything & use slow sync
 let python_highlight_all=1
 let python_slow_sync=1
+let g:used_javascript_libs = 'angularjs'
 
 """ custom commands
 
