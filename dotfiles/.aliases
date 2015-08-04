@@ -1,11 +1,10 @@
+# Linux-only
+#eval "`dircolors -b`"
+#alias ls='ls --color=auto --hide="*.pyc" --hide="__pycache__"'
+#alias open='gnome-open'
+
 # basic commands
-eval "`dircolors -b`"
-alias ls='ls --color=auto --hide="*.pyc" --hide="__pycache__"'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
@@ -20,7 +19,6 @@ alias mkvenv2='mkvirtualenv -p `which python2`'
 # short names
 alias py='ipython`python -c "import sys; print(\"3\" if sys.version_info[0] == 3 else \"\")"` --no-banner --no-confirm-exit -i'
 alias ack='ack-grep'
-alias open='gnome-open'
 
 # command replacements
 alias tree='tree -A -I "*.pyc|*~"'
@@ -34,5 +32,4 @@ alias gs='git status'
 alias gy='git pull && git push'
 
 # s3cmd aliases
-alias s3sunlight='s3cmd -c ~/.s3cmd/sunlight'
 alias s3personal='s3cmd -c ~/.s3cmd/personal'

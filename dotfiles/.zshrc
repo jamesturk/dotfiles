@@ -29,8 +29,6 @@ bindkey "^[[1;5D" backward-word
 # autocompletion
 zstyle :compinstall filename '/home/james/.zshrc'
 
-compdef mosh=ssh
-
 # processes
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
@@ -47,12 +45,13 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
         list man messagebus proxy rtkit saned speech-dispatcher sys syslog usbmux \
         www-data
 
-# this doesn't work :(
-# zstyle ':completion:*:*:git:*' commands 'base'
-
 # external files
-#source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
-source /etc/zsh_command_not_found
+if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh ]; then
+    source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
+fi
+if [ -f /etc/zsh_command_not_found ]; then
+    source /etc/zsh_command_not_found
+fi
 source ~/.aliases
 ZSH_THEME_GIT_PROMPT_NOCACHE=true
 source ~/.zsh/git-prompt/zshrc.sh
