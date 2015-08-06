@@ -1,7 +1,10 @@
-# Linux-only
-#eval "`dircolors -b`"
-#alias ls='ls --color=auto --hide="*.pyc" --hide="__pycache__"'
-#alias open='gnome-open'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+    eval "`dircolors -b`"
+    alias ls='ls --color=auto --hide="*.pyc" --hide="__pycache__"'
+    alias open='gnome-open'
+    alias ack='ack-grep'
+fi
 
 # basic commands
 alias grep='grep --color=auto'
@@ -18,7 +21,6 @@ alias mkvenv2='mkvirtualenv -p `which python2`'
 
 # short names
 alias py='ipython`python -c "import sys; print(\"3\" if sys.version_info[0] == 3 else \"\")"` --no-banner --no-confirm-exit -i'
-alias ack='ack-grep'
 
 # command replacements
 alias tree='tree -A -I "*.pyc|*~"'

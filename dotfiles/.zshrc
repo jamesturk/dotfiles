@@ -70,8 +70,4 @@ export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_REQUIRE_VIRTUALENV=true
 export _JAVA_AWT_WM_NONREPARENTING=1
 export GDK_NATIVE_WINDOWS=true
-export GOROOT=/usr/lib/go/
-export GOPATH=/home/james/code/go/
-
-# added by travis gem
-[ -f /home/james/.travis/travis.sh ] && source /home/james/.travis/travis.sh
+export GOPATH=$HOME/code/go/
