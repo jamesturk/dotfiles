@@ -3,7 +3,6 @@ if [[ "$unamestr" == 'Linux' ]]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto --hide="*.pyc" --hide="__pycache__"'
     alias open='gnome-open'
-    alias ack='ack-grep'
 fi
 
 # basic commands

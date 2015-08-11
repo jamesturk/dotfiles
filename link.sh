@@ -1,4 +1,3 @@
-ln -s ~/config/dotfiles/.ackrc         ~/.ackrc
 ln -s ~/config/dotfiles/.aliases       ~/.aliases
 # skip bin, config, fonts
 ln -s ~/config/dotfiles/.gitconfig     ~/.gitconfig
