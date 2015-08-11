@@ -53,9 +53,9 @@ set virtualedit=block     " allow editing in virtual space in block mode
 "set directory=~/.vimtmp   " keep all tempfiles in same dir
 " work with X11 clipboard(?)
 set clipboard=unnamedplus
-set colorcolumn=100
+set colorcolumn=80
 
-let g:pymode_options_max_line_length = 99
+let g:pymode_options_max_line_length = 79
 let g:pymode_folding = 0
 let g:pymode_doc = 0
 let g:pymode_virtualenv = 0
