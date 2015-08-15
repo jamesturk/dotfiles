@@ -24,3 +24,7 @@ brew cask
     radiant-player
     slate
     steam
+
+brew tap caskroom/fonts
+
+brew cask install font-source-code-pro font-source-code-pro-for-powerline
