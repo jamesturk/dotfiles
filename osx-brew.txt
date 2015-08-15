@@ -1,0 +1,26 @@
+brew
+    brew-cask
+    git
+    go
+    hugo
+    python
+    python3
+    ag
+    tmux
+    tree
+    vim
+    zsh
+brew cask
+    dash
+    firefox
+    flash
+    flash-player
+    flux
+    github-desktop
+    google-chrome
+    iterm2
+    notational-velocity
+    postgres
+    radiant-player
+    slate
+    steam
