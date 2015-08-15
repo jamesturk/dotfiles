@@ -8,3 +8,5 @@ ln -sFvh ~/config/dotfiles/vim           ~/.vim
 ln -sFvh ~/config/dotfiles/vimrc         ~/.vimrc
 ln -sFvh ~/config/dotfiles/zsh           ~/.zsh
 ln -sFvh ~/config/dotfiles/zshrc         ~/.zshrc
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
