@@ -52,8 +52,9 @@ autocmd filetype go set listchars=tab:\ \ ,trail:\
 set virtualedit=block     " allow editing in virtual space in block mode
 "set directory=~/.vimtmp   " keep all tempfiles in same dir
 " work with X11 clipboard(?)
-set clipboard=unnamedplus
+set clipboard=unnamed
 set colorcolumn=80
+set backspace=indent,eol,start
 
 let g:pymode_options_max_line_length = 79
 let g:pymode_folding = 0
