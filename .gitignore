@@ -1,5 +1,1 @@
-dotfiles/.gnupg
-dotfiles/.irssi
-dotfiles/.s3cmd
-dotfiles/.ssh
-dotfiles/.vim/.netrwhist
+dotfiles/vim/.netrwhist
