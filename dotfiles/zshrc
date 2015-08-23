@@ -62,6 +62,8 @@ PROMPT='%F{blue}%~%f$(git_super_status)$ '
 #update_current_git_vars
 
 # various exports
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
 export EDITOR=vim
 export GPGKEY=876302FC
 export PATH=${PATH}:/usr/local/bin/:~/.bin/:~/code/go/bin/:/usr/local/texlive/2014/bin/x86_64-linux:/Applications/Postgres.app/Contents/Versions/9.4/bin
