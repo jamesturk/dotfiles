@@ -27,6 +27,8 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 # autocompletion
+autoload -U compinit
+compinit
 zstyle :compinstall filename '/home/james/.zshrc'
 
 # processes

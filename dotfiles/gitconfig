@@ -4,7 +4,7 @@
 [github]
     user = jamesturk
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 [color]
     branch = auto
     diff = auto
@@ -21,9 +21,3 @@
     pr = "!f() { git fetch origin refs/pull/$1/head:pr/$1; git checkout pr/$1; }; f"
     cleanup = "!f() { git branch -D `git branch | grep pr`; }; f"
     good = "!f() { x=$(git rev-parse --abbrev-ref HEAD); git checkout master; git merge $x; }; f"
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
