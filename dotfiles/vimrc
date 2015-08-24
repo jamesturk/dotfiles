@@ -99,6 +99,12 @@ let python_highlight_all=1
 let python_slow_sync=1
 let g:used_javascript_libs = 'angularjs'
 
+""" powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set laststatus=2
+
 """ custom commands
 
 " removes trailing spaces
