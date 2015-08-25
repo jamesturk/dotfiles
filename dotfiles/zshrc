@@ -60,6 +60,7 @@ source ~/.zsh/git-prompt/zshrc.sh
 
 # prompt
 PROMPT='%F{blue}%~%f$(git_super_status)$ '
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 # if caching, call once to refresh for git on new terminal
 #update_current_git_vars
 
