@@ -10,3 +10,5 @@ ln -sFvh ~/config/dotfiles/zsh           ~/.zsh
 ln -sFvh ~/config/dotfiles/zshrc         ~/.zshrc
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+pip install pgcli virtualenv virtualenvwrapper powerline-status

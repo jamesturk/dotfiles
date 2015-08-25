@@ -27,4 +27,4 @@ brew cask
 
 brew tap caskroom/fonts
 
-brew cask install font-source-code-pro font-source-code-pro-for-powerline
+brew cask install font-source-code-pro-for-powerline
