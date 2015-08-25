@@ -17,7 +17,10 @@
                 }
             },
             {
-                "function": "powerline.segments.common.net.hostname"
+                "function": "powerline.segments.common.net.hostname",
+                "args": {
+                    "exclude_domain": true
+                }
             }
         ]
     }
