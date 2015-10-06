@@ -48,9 +48,8 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
         www-data
 
 # external files
-if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh ]; then
-    source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
-fi
+source /usr/local/bin/virtualenvwrapper.sh
+
 if [ -f /etc/zsh_command_not_found ]; then
     source /etc/zsh_command_not_found
 fi
