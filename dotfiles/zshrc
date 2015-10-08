@@ -54,14 +54,10 @@ if [ -f /etc/zsh_command_not_found ]; then
     source /etc/zsh_command_not_found
 fi
 source ~/.aliases
-ZSH_THEME_GIT_PROMPT_NOCACHE=true
-source ~/.zsh/git-prompt/zshrc.sh
 
 # prompt
 PROMPT='%F{blue}%~%f$(git_super_status)$ '
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-# if caching, call once to refresh for git on new terminal
-#update_current_git_vars
 
 # various exports
 export CLICOLOR=1
