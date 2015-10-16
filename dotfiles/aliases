@@ -13,8 +13,8 @@ alias l='ls -CF'
 
 # new commands
 alias quickweb='python -m SimpleHTTPServer'
-alias rmpyc='find -name "*.pyc" -delete'
-alias rmpycache='find -name "__pycache__" -delete'
+alias rmpyc='rm **/*.pyc'
+alias rmpycache='rm -r **/__pycache__'
 alias mkvirtualenv='mkvirtualenv -p `which python3`'
 alias mkvenv2='mkvirtualenv -p `which python2`'
 
