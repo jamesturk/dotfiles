@@ -13,6 +13,7 @@ Plugin 'int3/vim-extradite'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'rking/ag.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -62,6 +63,9 @@ let g:pymode_doc = 0
 let g:pymode_virtualenv = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_rope = 0
+
+
+let g:ag_working_path_mode="r"
 
 "let g:notes_directories = ['~/Dropbox/notes']
 let g:notes_suffix = '.txt'
