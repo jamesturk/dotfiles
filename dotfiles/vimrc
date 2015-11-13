@@ -20,9 +20,6 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 call vundle#end()
 filetype plugin indent on
 
-""" map ;; to <Esc>
-"imap ;; <Esc>
-
 """ tab settings, 4 space tabs, always.
 set tabstop=4
 set shiftwidth=4
@@ -57,18 +54,6 @@ set clipboard=unnamed
 set colorcolumn=80
 set backspace=indent,eol,start
 
-let g:pymode_options_max_line_length = 79
-let g:pymode_folding = 0
-let g:pymode_doc = 0
-let g:pymode_virtualenv = 0
-let g:pymode_lint_on_write = 0
-let g:pymode_rope = 0
-
-
-let g:ag_working_path_mode="r"
-
-"let g:notes_directories = ['~/Dropbox/notes']
-let g:notes_suffix = '.txt'
 
 if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j " Delete comment character when joining commented lines
@@ -91,17 +76,32 @@ autocmd BufRead,BufNewFile *.json setfiletype json
 autocmd BufRead,BufNewFile *.{md,markdown} setfiletype markdown
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
-"autocmd FileType python set complete+=k/home/james/.vim/pydiction/pydiction iskeyword+=.
-"autocmd FileType python highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"autocmd FileType python match OverLength /\%80v.\+/
 
 """ config for plugins
 " ctrlp only autocompletes things in git if we're in a .git dir
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+
+" Ag
+let g:ag_working_path_mode="r"
+
+" notes
+let g:notes_suffix = '.txt'
+
 " python specific settings, highlight everything & use slow sync
+let g:pymode_options_max_line_length = 79
+let g:pymode_folding = 0
+let g:pymode_doc = 0
+let g:pymode_virtualenv = 0
+let g:pymode_rope = 0
+let g:pymode_lint = 1
+let g:pymode_lint_checkers = ['pep8', 'pyflakes']
+let g:pymode_lint_on_write = 1
+let g:pymode_lint_signs = 1
 let python_highlight_all=1
 let python_slow_sync=1
-let g:used_javascript_libs = 'angularjs'
+
+" javascript
+let g:used_javascript_libs = 'react,jquery,underscore'
 
 """ powerline
 python from powerline.vim import setup as powerline_setup
