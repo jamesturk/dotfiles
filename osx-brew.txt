@@ -1,28 +1,41 @@
 brew
-    brew-cask
+    docker
+    docker-compose
+    docker-machine
+    elasticsearch
     git
     go
+    graphicsmagick
     hugo
     python
     python3
-    ag
+    reattach-to-user-namespace
+    sqlite3
+    the_silver_searcher
     tmux
     tree
     vim
+    wget
     zsh
 brew cask
-    dash
+    bartender
+    caffeine
+    dashlane
+    font-source-code-pro-for-powerline
     firefox
-    flash
-    flash-player
     flux
     github-desktop
     google-chrome
+    hipchat
     iterm2
-    notational-velocity
+    kitematic
     postgres
     radiant-player
-    slate
+    screenhero
+    sequel-pro
+    slack
+    vagrant
+    virtualbox
     steam
 
 brew tap caskroom/fonts
