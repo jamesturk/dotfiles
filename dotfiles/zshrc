@@ -57,3 +57,12 @@ export GDK_NATIVE_WINDOWS=true
 export GOPATH=$HOME/code/go/
 
 eval `/usr/libexec/path_helper -s`
+
+
+function frameworkpython3 {
+    if [[ ! -z "$VIRTUAL_ENV" ]]; then
+        PYTHONHOME=$VIRTUAL_ENV /usr/local/bin/python3 "$@"
+    else
+        /usr/local/bin/python3 "$@"
+    fi
+}
