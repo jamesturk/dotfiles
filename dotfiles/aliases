@@ -21,6 +21,7 @@ alias mkvenv2='mkvirtualenv -p `which python2`'
 # short names
 alias py='ipython`python -c "import sys; print(\"3\" if sys.version_info[0] == 3 else \"\")"` --no-banner --no-confirm-exit -i'
 alias jnb='frameworkpython3 -m jupyter notebook'
+alias jnb-slides='jupyter nbconvert --to slides --post serve'
 
 # command replacements
 alias tree='tree -A -I "*.pyc|*~"'
