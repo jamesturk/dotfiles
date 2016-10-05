@@ -1,7 +1,4 @@
 brew
-    docker
-    docker-compose
-    docker-machine
     elasticsearch
     git
     go
@@ -20,22 +17,17 @@ brew
 brew cask
     bartender
     caffeine
-    dashlane
     font-source-code-pro-for-powerline
     firefox
     flux
     github-desktop
     google-chrome
-    hipchat
     iterm2
-    kitematic
     postgres
     radiant-player
     screenhero
     sequel-pro
     slack
-    vagrant
-    virtualbox
     steam
 
 brew tap caskroom/fonts
