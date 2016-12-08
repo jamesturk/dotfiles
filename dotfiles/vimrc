@@ -16,6 +16,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'rking/ag.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
+Plugin 'Konfekt/FastFold'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'rust-lang/rust.vim'
@@ -49,6 +50,8 @@ set wildmenu     " nice autocomplete menu
 set list         " show whitespace
 set listchars=tab:»\ ,trail:\ 
 autocmd filetype go set listchars=tab:\ \ ,trail:\ 
+" open folds by default
+autocmd filetype python normal zR
 set virtualedit=block     " allow editing in virtual space in block mode
 "set directory=~/.vimtmp   " keep all tempfiles in same dir
 " work with X11 clipboard(?)
@@ -91,7 +94,7 @@ let g:notes_suffix = '.txt'
 
 " python specific settings, highlight everything & use slow sync
 let g:pymode_options_max_line_length = 79
-let g:pymode_folding = 0
+let g:pymode_folding = 1
 let g:pymode_doc = 0
 let g:pymode_virtualenv = 0
 let g:pymode_rope = 0
