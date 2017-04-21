@@ -4,38 +4,41 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'fatih/vim-go'
-Plugin 'kien/ctrlp.vim'
-Plugin 'klen/python-mode'
+Plugin 'kien/ctrlp.vim'                                         "nvim
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
-Plugin 'int3/vim-extradite'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'rking/ag.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/html5.vim'
+Plugin 'int3/vim-extradite'                                     "DROP
+Plugin 'xolox/vim-misc'                                         "DROP
+Plugin 'xolox/vim-notes'                                        "DROP
+Plugin 'christoomey/vim-tmux-navigator'                         "nvim
+Plugin 'rking/ag.vim'                                           "DROP
 Plugin 'Konfekt/FastFold'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'ekalinin/Dockerfile.vim'                                "DROP
+" lang specific
+Plugin 'klen/python-mode'
+Plugin 'fatih/vim-go'
 Plugin 'rust-lang/rust.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'othree/html5.vim'
 call vundle#end()
 filetype plugin indent on
 
-""" tab settings, 4 space tabs, always.
+""""""""" NVIM 
+
+""" tab settings, 4 space tabs, always.                         "nvim
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
 set autoindent
 
-""" modeline
+""" modeline                                                    "nvim
 set showcmd    " show partial command in visual mode
 set showmode   " show mode on last line
 set ruler      " line & column number of cursor
 
-""" other settings
+""" other settings                                              nvim
 set title        " set title of window
 set number       " show line numbers
 set hidden       " allow editing multiple buffers
@@ -64,7 +67,7 @@ if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j " Delete comment character when joining commented lines
 endif
 
-""" color scheme
+""" color scheme                                                "drop
 set t_Co=256
 colorscheme busybee
 syntax on            " use syntax color highlighting
@@ -123,12 +126,3 @@ function! TrimSpace()
   ''
 :endfunction
 command! -bar -nargs=0 TrimSpace call TrimSpace()
-
-""" translation stuff from https://github.com/rory/django-template-i18n-lint/
-" select some text in visual mode, then call the e macro on it (e.g. press
-" @e), and it'll wrap that text in {% blocktrans %}/{% endblocktrans %}
-let @e = "`>a{% endblocktrans %}gv`<i{% blocktrans %}"
-
-" select some text in visual mode, then call the w macro on it (e.g. press
-" @w), and it'll wrap that text in {% trans '' %}
-let @w = "`>a' %}gv`<i{% trans 'l"
