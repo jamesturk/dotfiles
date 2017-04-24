@@ -1,5 +1,4 @@
 brew
-    elasticsearch
     git
     go
     graphicsmagick
@@ -11,14 +10,13 @@ brew
     the_silver_searcher
     tmux
     tree
-    vim
+    neovim
     wget
     zsh
 brew cask
     bartender
     caffeine
     font-source-code-pro-for-powerline
-    firefox
     flux
     github-desktop
     google-chrome
