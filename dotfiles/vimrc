@@ -3,16 +3,16 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/ctrlp.vim'                                         "nvim
+Plugin 'gmarik/Vundle.vim'                                      "DROP
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Konfekt/FastFold'                                       "nvim
+Plugin 'christoomey/vim-tmux-navigator'                         "nvim
+Plugin 'kien/ctrlp.vim'                                         "nvim
 Plugin 'int3/vim-extradite'                                     "DROP
 Plugin 'xolox/vim-misc'                                         "DROP
 Plugin 'xolox/vim-notes'                                        "DROP
-Plugin 'christoomey/vim-tmux-navigator'                         "nvim
 Plugin 'rking/ag.vim'                                           "DROP
-Plugin 'Konfekt/FastFold'
 Plugin 'ekalinin/Dockerfile.vim'                                "DROP
 " lang specific
 Plugin 'klen/python-mode'
@@ -38,7 +38,7 @@ set showcmd    " show partial command in visual mode
 set showmode   " show mode on last line
 set ruler      " line & column number of cursor
 
-""" other settings                                              nvim
+""" other settings                                              "nvim
 set title        " set title of window
 set number       " show line numbers
 set hidden       " allow editing multiple buffers
@@ -74,7 +74,7 @@ syntax on            " use syntax color highlighting
 filetype plugin indent on
 highlight ColorColumn ctermbg=237
 
-""" autocompletion
+""" autocompletion                                              "drop
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags

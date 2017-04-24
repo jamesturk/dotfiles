@@ -1,7 +1,10 @@
 call plug#begin('~/.config/nvim/plugged')
+
 """ essentials
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'konfekt/FastFold'
+Plug 'vim-airline/vim-airline'
 """ IDE-type stuff
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
@@ -17,6 +20,11 @@ endif
 syntax enable
 filetype plugin indent on
 colorscheme OceanicNext
+let g:airline_theme='oceanicnext'
+
+""" host programs
+let g:python_host_prog='/Users/james/.virtualenvs/neovim2/bin/python'
+let g:python3_host_prog='/Users/james/.virtualenvs/neovim3/bin/python3'
 
 """ tab settings, 4 space tabs, always.
 set tabstop=4
@@ -55,9 +63,10 @@ autocmd filetype go set listchars=tab:\ \ ,trail:\
 autocmd filetype python normal zR
 
 """ plugin config
+let g:airline#extensions#tabline#enabled = 1
 let g:deoplete#enable_at_startup = 1
-call deoplete#custom#set('jedi', 'debug_enabled', 1)
-call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
+"call deoplete#custom#set('jedi', 'debug_enabled', 1)
+"call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
 
 """ custom commands
 
