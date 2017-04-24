@@ -8,6 +8,8 @@ Plug 'vim-airline/vim-airline'
 """ IDE-type stuff
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+Plug 'majutsushi/tagbar'
+Plug 'neomake/neomake'
 """ color schemes
 Plug 'mhartington/oceanic-next'
 Plug 'lifepillar/vim-solarized8'
@@ -56,13 +58,16 @@ set virtualedit=block     " allow editing in virtual space in block mode
 set formatoptions+=j " Delete comment character when joining commented lines
 set colorcolumn=80
 set backspace=indent,eol,start
+set clipboard=unnamed
 
 """ filetype specific
 autocmd filetype go set listchars=tab:\ \ ,trail:\ 
 " open folds by default
 autocmd filetype python normal zR
+autocmd! BufWritePost * Neomake
 
 """ plugin config
+let g:neomake_python_enabled_makers = ['flake8']
 let g:airline#extensions#tabline#enabled = 1
 let g:deoplete#enable_at_startup = 1
 "call deoplete#custom#set('jedi', 'debug_enabled', 1)
