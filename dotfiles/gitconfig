@@ -4,7 +4,7 @@
 [github]
     user = jamesturk
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.config/git/ignore
 [color]
     branch = auto
     diff = auto

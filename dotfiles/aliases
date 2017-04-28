@@ -26,6 +26,7 @@ alias jnb-slides='jupyter nbconvert --to slides --post serve'
 # command replacements
 alias tree='tree -A -I "*.pyc|*~"'
 alias tmux='tmux -2'
+alias vim=nvim
 
 # git stuff
 alias g='git'
@@ -33,6 +34,3 @@ alias gc='git commit'
 alias gp='git pull'
 alias gs='git status'
 alias gy='git pull && git push'
-
-# s3cmd aliases
-alias s3personal='s3cmd -c ~/.s3cmd/personal'

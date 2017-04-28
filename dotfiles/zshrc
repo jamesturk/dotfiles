@@ -33,10 +33,6 @@ zstyle :compinstall filename '/home/james/.zshrc'
 
 # external files
 source /usr/local/bin/virtualenvwrapper.sh
-
-if [ -f /etc/zsh_command_not_found ]; then
-    source /etc/zsh_command_not_found
-fi
 source ~/.aliases
 
 # prompt
