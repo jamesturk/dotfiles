@@ -1,6 +1,6 @@
 dotfiles/vim/.netrwhist
+dotfiles/config/nvim/.netrwhist
 dotfiles/config/nvim/plugged
-
-# nvim symlinks
+dotfiles/config/hub
 dotfiles/config/wireshark
 dotfiles/config/pgcli

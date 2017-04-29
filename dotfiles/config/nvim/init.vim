@@ -1,10 +1,10 @@
 call plug#begin('~/.config/nvim/plugged')
-
 """ essentials
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'konfekt/FastFold'
 Plug 'vim-airline/vim-airline'
+Plug 'sheerun/vim-polyglot'
 """ IDE-type stuff
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
@@ -64,6 +64,7 @@ set clipboard=unnamed
 autocmd filetype go set listchars=tab:\ \ ,trail:\ 
 " open folds by default
 autocmd filetype python normal zR
+autocmd filetype python set colorcolumn=99
 autocmd! BufWritePost * Neomake
 
 """ plugin config
