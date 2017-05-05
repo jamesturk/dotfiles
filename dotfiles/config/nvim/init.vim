@@ -3,9 +3,10 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'konfekt/FastFold'
-Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-commentary'
 """ IDE-type stuff
+Plug 'vim-airline/vim-airline'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'majutsushi/tagbar'
