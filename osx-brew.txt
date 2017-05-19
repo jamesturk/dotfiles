@@ -12,22 +12,17 @@ brew
     tree
     neovim
     wget
-    zsh
 brew cask
     bartender
     caffeine
-    font-source-code-pro-for-powerline
     flux
     github-desktop
     google-chrome
     iterm2
     postgres
-    radiant-player
     screenhero
-    sequel-pro
     slack
     steam
 
 brew tap caskroom/fonts
-
 brew cask install font-source-code-pro-for-powerline
