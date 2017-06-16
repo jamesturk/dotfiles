@@ -17,6 +17,6 @@ function ego
         case start
             aws ec2 start-instances --instance-ids (ego id) --region=us-east-1
         case ssh
-            ssh james@(ego ip) -t tmux attach
+            ssh james@(ego ip) -t "tmux attach; or tmux new"
     end
 end
