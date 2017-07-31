@@ -11,6 +11,8 @@ brew
     tree
     neovim
     pipsi
+    jq
+    awscli
     
 pipsi install
     flake8
