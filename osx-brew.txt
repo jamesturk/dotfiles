@@ -10,6 +10,11 @@ brew
     fish
     tree
     neovim
+    pipsi
+    
+pipsi install
+    flake8
+    
 
 manual install
     iterm2
@@ -17,6 +22,9 @@ manual install
     docker
     google sync
     slack
+    
+    
+    
     
 # brew tap caskroom/fonts
 # brew cask install font-source-code-pro-for-powerline
