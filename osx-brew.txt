@@ -1,28 +1,32 @@
 brew
     git
     go
-    graphicsmagick
     hugo
     python
     python3
     reattach-to-user-namespace
-    sqlite3
     the_silver_searcher
     tmux
+    fish
     tree
     neovim
-    wget
-brew cask
-    bartender
-    caffeine
-    flux
-    github-desktop
-    google-chrome
-    iterm2
-    postgres
-    screenhero
-    slack
-    steam
+    pipsi
+    jq
+    awscli
+    
+pipsi install
+    flake8
+    
 
-brew tap caskroom/fonts
-brew cask install font-source-code-pro-for-powerline
+manual install
+    iterm2
+    chrome
+    docker
+    google sync
+    slack
+    
+    
+    
+    
+# brew tap caskroom/fonts
+# brew cask install font-source-code-pro-for-powerline
