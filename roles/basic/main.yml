@@ -1,0 +1,60 @@
+- name: add neovim repository
+  apt_repository: repo='ppa:neovim-ppa/stable'
+- name: install base packages
+  apt: pkg={{item}} update_cache=yes
+  with_items:
+    - build-essential
+    - git
+    - mercurial
+    - libpq-dev
+    - unzip
+    - gdal-bin
+    - python
+    - python-dev
+    - virtualenv
+    - libxslt-dev
+    - tmux
+    - tree
+    - fish
+    - silversearcher-ag
+    - docker-compose
+    - neovim
+
+- name: checkout config
+  git: repo=https://github.com/jamesturk/config.git dest=/home/james/config accept_hostkey=yes version=master
+  sudo_user: "james"
+- name: make directories
+  file: state=directory path=/home/james/{{item}}
+  sudo_user: "james"
+  with_items:
+    - .config
+    - .virtualenvs
+- name: link config
+  file: state=link path={{item.path}} src={{item.src}}
+  sudo_user: "james"
+  with_items:
+    - { path: /home/james/.gitconfig src: /home/james/config/dotfiles/gitconfig }
+    - { path: /home/james/.tmux.conf src: /home/james/config/dotfiles/tmux.conf }
+    - { path: /home/james/.config/fish src: /home/james/config/dotfiles/config/fish }
+    - { path: /home/james/.config/git src: /home/james/config/dotfiles/config/git }
+    - { path: /home/james/.config/nvim src: /home/james/config/dotfiles/config/nvim }
+
+# - user:
+#     name: james
+#     generate_ssh_key: yes
+#     ssh_key_bits: 4096
+#     ssh_key_file: .ssh/id_rsa
+
+# python stuff
+- name: install python global packages
+  pip: name={{item}} executable=pip3
+  sudo_user: "james"
+  with_items:
+    - virtualfish
+    - flake8
+- name: install neovim requirements (python 2)
+  pip: name=neovim virtualenv=/home/james/.virtualenvs/neovim2 virtualenv_python=python2
+  sudo_user: "james"
+- name: install neovim requirements (python 3)
+  pip: name=neovim virtualenv=/home/james/.virtualenvs/neovim3 virtualenv_python=python3
+  sudo_user: "james"
