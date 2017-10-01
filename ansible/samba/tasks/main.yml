@@ -1,0 +1,25 @@
+- name: install samba packages
+  apt: pkg={{item}} update_cache=yes
+  with_items:
+    - samba
+
+- name: add fileshare user
+  user: name=fileshare comment="Samba User"
+- name: creating samba user passwords
+  shell: "(echo {{ smbpasswd }}; echo {{ smbpasswd }}) | smbpasswd -s -a fileshare"
+- name: make directory
+  file: state=directory path=/home/fileshare/share
+  become_user: "fileshare"
+- name: samba share file
+  blockinfile:
+    path: /etc/samba/smb.conf
+    block: |
+      [share]
+      path = /home/fileshare/share
+      valid users = fileshare
+      browseable = yes
+      read only = no
+      # TODO: notify restart smb
+
+- name: allow Samba
+  ufw: rule=allow name=Samba

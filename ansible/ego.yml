@@ -4,4 +4,4 @@
   user: james
   become: yes
   roles:
-    - basic
+    - samba
