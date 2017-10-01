@@ -1,0 +1,7 @@
+---
+- name: ego
+  hosts: ego
+  user: james
+  become: yes
+  roles:
+    - basic
