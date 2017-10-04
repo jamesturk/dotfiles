@@ -4,3 +4,4 @@ dotfiles/config/nvim/plugged
 dotfiles/config/hub
 dotfiles/config/wireshark
 dotfiles/config/pgcli
+private-config
