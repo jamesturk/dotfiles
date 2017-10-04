@@ -63,10 +63,17 @@
   pip: name=neovim virtualenv=/home/james/.virtualenvs/neovim3 virtualenv_python=python3
   become_user: "james"
 
+# SSH config
+- name: fix SSH port
+  replace: 
+    path: /etc/ssh/sshd_config
+    regexp: 'Port 22'
+    replace: 'Port {{new_ssh_port}}'
+    # TODO: restart ssh
 
 # UFW firewall
 - name: allow SSH
-  ufw: rule=allow name=OpenSSH
+  ufw: rule=allow port={{new_ssh_port}} proto=tcp
 - name: UFW logging on
   ufw: logging=on
 - name: UFW enabled & disallowing everything
