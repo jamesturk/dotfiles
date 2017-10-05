@@ -1,4 +1,4 @@
-function ego
+function ec2instance
     awsenv james
     if count $argv > /dev/null
         set cmd $argv[1]
