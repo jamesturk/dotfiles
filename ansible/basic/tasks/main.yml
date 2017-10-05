@@ -9,6 +9,7 @@
     - git
     - mercurial
     - libpq-dev
+    - libffi-dev
     - unzip
     - gdal-bin
     - python
@@ -27,6 +28,8 @@
 - name: checkout config
   git: repo=https://github.com/jamesturk/config.git dest=/home/james/config accept_hostkey=yes version=master
   become_user: "james"
+# - name: checkout private config
+#   git: repo=git@github.com:jamesturk/private-config.git dest=/home/james/config/private-config accept_hostkey=yes version=master
 - name: make directories
   file: state=directory path=/home/james/{{item}}
   become_user: "james"
@@ -43,11 +46,11 @@
     - { path: /home/james/.config/git, src: /home/james/config/dotfiles/config/git }
     - { path: /home/james/.config/nvim, src: /home/james/config/dotfiles/config/nvim }
 
-# - user:
-#     name: james
-#     generate_ssh_key: yes
-#     ssh_key_bits: 4096
-#     ssh_key_file: .ssh/id_rsa
+# user management
+- name: make ssh key
+  user: name=james generate_ssh_key=yes ssh_key_bits=4096 ssh_key_file=.ssh/id_rsa
+- name: change shell
+  user: name=james shell=/usr/bin/fish
 
 # python stuff
 - name: install python global packages
