@@ -5,4 +5,5 @@
   become: yes
   roles:
     - basic
+    - emu
     - samba

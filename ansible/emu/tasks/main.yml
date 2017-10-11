@@ -1,0 +1,14 @@
+- name: add retroarch repository
+  apt_repository: repo='ppa:libretro/stable'
+- name: install base packages
+  apt: pkg={{item}} update_cache=yes
+  with_items:
+    - retroarch
+    - p7zip-full
+    - unrar
+    - libretro-snes9x
+    - libretro-mupen64plus
+    - libretro-nestopia
+    - libretro-genesisplusgx
+- name: create emu user w/ temporary password
+  user: name=emu shell=/usr/bin/fish password=$6$sFrq3fwz$pFer1AVEk0ZDmin0Wof3TeOXWzlhICqsiJAn99HDI9H7Bs8FgiZZ64MFhF/fdPS3YmaW73opMcJ4OCKYIn7RB1

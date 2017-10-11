@@ -73,6 +73,8 @@
     regexp: 'Port 22'
     replace: 'Port {{new_ssh_port}}'
     # TODO: restart ssh
+- name: add SSH for james only
+  lineinfile: path=/etc/ssh/sshd_config line="AllowUsers james"
 
 # UFW firewall
 - name: allow SSH
