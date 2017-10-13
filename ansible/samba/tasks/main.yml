@@ -6,7 +6,7 @@
 - name: add fileshare user
   user: name=fileshare comment="Samba User"
 - name: creating samba user passwords
-  shell: "(echo {{ smbpasswd }}; echo {{ smbpasswd }}) | smbpasswd -s -a fileshare"
+  shell: "(echo {{ samba_password }}; echo {{ samba_password }}) | smbpasswd -s -a fileshare"
 - name: make directory
   file: state=directory path=/home/fileshare/share
   become_user: "fileshare"

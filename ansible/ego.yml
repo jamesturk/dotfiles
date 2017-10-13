@@ -6,4 +6,5 @@
   roles:
     - basic
     - emu
-    - samba
+    - jupyter
+      #    - samba
