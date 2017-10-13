@@ -1,0 +1,27 @@
+# based on https://jupyter-notebook.readthedocs.io/en/stable/public_server.html
+
+- name: create jupyter user
+  user: name=jupyter shell=/usr/bin/fish
+
+- name: install jupyter in venv
+  pip: name=jupyter virtualenv=/home/jupyter/venv virtualenv_python=python3
+  become_user: "jupyter"
+
+- name: create SSL key
+  command: openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /home/jupyter/jkey.key -out /home/jupyter/jcert.pem -batch
+  args:
+    creates: "/home/jupyter/jkey.key"
+  become_user: "jupyter"
+
+- name: make directories
+  file: state=directory path=/home/jupyter/{{item}}
+  become_user: "jupyter"
+  with_items:
+    - notebooks
+    - .jupyter
+
+- name: write config file
+  template: src=jupyter_notebook_config.py.j2 dest=/home/jupyter/.jupyter/jupyter_notebook_config.py
+
+- name: allow connections
+  ufw: rule=allow port={{jupyter_port}} proto=tcp
