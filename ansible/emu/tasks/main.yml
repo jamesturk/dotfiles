@@ -10,5 +10,5 @@
     - libretro-mupen64plus
     - libretro-nestopia
     - libretro-genesisplusgx
-- name: create emu user w/ temporary password
-  user: name=emu shell=/usr/bin/fish password=$6$sFrq3fwz$pFer1AVEk0ZDmin0Wof3TeOXWzlhICqsiJAn99HDI9H7Bs8FgiZZ64MFhF/fdPS3YmaW73opMcJ4OCKYIn7RB1
+- name: create emu user
+  user: name=emu shell=/usr/bin/fish password={{emu_password}}
