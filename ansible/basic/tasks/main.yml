@@ -2,6 +2,8 @@
   apt_repository: repo='ppa:neovim-ppa/stable'
 - name: add fish repository
   apt_repository: repo='ppa:fish-shell/release-2'
+- name: add love2d repository
+  apt_repository: repo='ppa:bartbes/love-stable'
 - name: install base packages
   apt: pkg={{item}} update_cache=yes
   with_items:
@@ -24,6 +26,7 @@
     - python3-pip
     - python-pip
     - neovim
+    - love
 
 - name: checkout config
   git: repo=https://github.com/jamesturk/config.git dest=/home/james/config accept_hostkey=yes version=master
