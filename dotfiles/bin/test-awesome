@@ -1,5 +1,0 @@
-Xephyr -ac -br -noreset -screen 800x600 :1 &
-ZEPHYR_PID=$!
-sleep 1
-DISPLAY=:1.0 awesome
-kill $ZEPHYR_PID
