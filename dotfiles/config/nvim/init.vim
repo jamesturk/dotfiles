@@ -68,6 +68,7 @@ autocmd filetype go set listchars=tab:\ \ ,trail:\
 autocmd filetype python normal zR
 autocmd filetype python set colorcolumn=99
 autocmd! BufWritePost * Neomake
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 
 """ plugin config
 let g:neomake_python_enabled_makers = ['flake8']
