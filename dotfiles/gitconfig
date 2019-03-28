@@ -22,6 +22,7 @@
     cleanup = "!f() { git branch -D `git branch | grep pr`; }; f"
     good = "!f() { x=$(git rev-parse --abbrev-ref HEAD); git checkout master; git merge $x; }; f"
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
