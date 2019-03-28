@@ -27,8 +27,8 @@ colorscheme OceanicNext
 let g:airline_theme='oceanicnext'
 
 """ host programs
-let g:python_host_prog=expand('~/.virtualenvs/neovim2/bin/python')
-let g:python3_host_prog=expand('~/.virtualenvs/neovim3/bin/python3')
+" let g:python_host_prog=expand('~/.virtualenvs/neovim2/bin/python')
+" let g:python3_host_prog=expand('/usr/local/bin/python3')
 
 """ tab settings, 4 space tabs, always.
 set tabstop=4
