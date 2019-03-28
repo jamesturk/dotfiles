@@ -4,7 +4,7 @@ function fish_prompt
    end
 
    set_color green
-   printf '%s ' (prompt_hostname)
+   # printf '%s ' (prompt_hostname)
 
    if test $VIRTUAL_ENV
        printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
