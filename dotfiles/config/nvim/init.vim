@@ -30,9 +30,9 @@ let g:airline_theme='oceanicnext'
 " let g:python_host_prog=expand('~/.virtualenvs/neovim2/bin/python')
 " let g:python3_host_prog=expand('/usr/local/bin/python3')
 
-""" tab settings, 4 space tabs, always.
-set tabstop=4
-set shiftwidth=4
+""" tab settings, 2 space tabs, except for Python.
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 set autoindent
@@ -67,8 +67,8 @@ autocmd filetype go set listchars=tab:\ \ ,trail:\
 " open folds by default
 autocmd filetype python normal zR
 autocmd filetype python set colorcolumn=99
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
 autocmd! BufWritePost * Neomake
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 
 """ plugin config
 let g:neomake_python_enabled_makers = ['flake8']
