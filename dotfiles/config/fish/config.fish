@@ -2,4 +2,5 @@
 set -g fish_greeting ""
 
 set PATH ~/.poetry/bin/ $PATH
+source ~/.cargo/env
 
