@@ -5,13 +5,15 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'konfekt/FastFold'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 """ IDE-type stuff
 Plug 'vim-airline/vim-airline'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'majutsushi/tagbar'
 Plug 'neomake/neomake'
-Plug 'ambv/black'
+Plug 'sbdchd/neoformat'
 """ color schemes
 Plug 'mhartington/oceanic-next'
 Plug 'lifepillar/vim-solarized8'
@@ -75,7 +77,8 @@ let g:neomake_python_enabled_makers = ['flake8']
 let g:airline#extensions#tabline#enabled = 1
 let g:deoplete#enable_at_startup = 1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-let g:black_virtualenv=expand('~/.virtualenvs/black')
+let g:neoformat_enabled_python = ['black']
+let g:neoformat_enabled_javascript = ['prettier']
 
 "call deoplete#custom#set('jedi', 'debug_enabled', 1)
 "call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
