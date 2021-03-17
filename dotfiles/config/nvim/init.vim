@@ -1,6 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 """ essentials
-Plug 'christoomey/vim-tmux-navigator'
+""" Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'konfekt/FastFold'
 Plug 'sheerun/vim-polyglot'
@@ -14,6 +14,8 @@ Plug 'zchee/deoplete-jedi'
 Plug 'majutsushi/tagbar'
 Plug 'neomake/neomake'
 Plug 'sbdchd/neoformat'
+Plug 'nikvdp/neomux'
+Plug 'gcmt/taboo.vim'
 """ color schemes
 Plug 'mhartington/oceanic-next'
 Plug 'lifepillar/vim-solarized8'
@@ -27,10 +29,6 @@ syntax enable
 filetype plugin indent on
 colorscheme OceanicNext
 let g:airline_theme='oceanicnext'
-
-""" host programs
-" let g:python_host_prog=expand('~/.virtualenvs/neovim2/bin/python')
-" let g:python3_host_prog=expand('/usr/local/bin/python3')
 
 """ tab settings, 2 space tabs, except for Python.
 set tabstop=2
@@ -71,6 +69,17 @@ autocmd filetype python normal zR
 autocmd filetype python set colorcolumn=99
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
 autocmd! BufWritePost * Neomake
+
+""" better navigation
+nnoremap <silent> <c-h> :wincmd h<CR>
+nnoremap <silent> <c-j> :wincmd j<CR>
+nnoremap <silent> <c-k> :wincmd k<CR>
+nnoremap <silent> <c-l> :wincmd l<CR>
+tnoremap <silent> <c-h> <C-\><C-n>:wincmd h<CR>
+tnoremap <silent> <c-j> <C-\><C-n>:wincmd j<CR>
+tnoremap <silent> <c-k> <C-\><C-n>:wincmd k<CR>
+tnoremap <silent> <c-l> <C-\><C-n>:wincmd l<CR>
+tnoremap <Esc> <C-\><C-n>
 
 """ plugin config
 let g:neomake_python_enabled_makers = ['flake8']
