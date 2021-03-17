@@ -1,8 +1,13 @@
-dotfiles/vim/.netrwhist
+dotfiles/config/.mono
+dotfiles/config/Autodesk
+dotfiles/config/configstore
+dotfiles/config/gh
+dotfiles/config/hub
+dotfiles/config/iterm2
 dotfiles/config/nvim/.netrwhist
 dotfiles/config/nvim/plugged
-dotfiles/config/hub
-dotfiles/config/wireshark
 dotfiles/config/pgcli
-dotfiles/config/configstore/
-private-config
+dotfiles/config/wireshark
+dotfiles/config/gcloud
+dotfiles/config/SmartSetMaster (Mac)
+dotfiles/vim/.netrwhist
