@@ -1,0 +1,29 @@
+[user]
+    email = dev@jamesturk.net
+    name = James Turk
+[github]
+    user = jamesturk
+[core]
+    excludesfile = ~/.config/git/ignore
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = auto
+[push]
+    default = tracking
+[alias]
+    co = checkout
+    graph = log --oneline --decorate --graph --branches
+    wdiff = diff --word-diff
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    pr = "!f() { git fetch origin refs/pull/$1/head:pr/$1; git checkout pr/$1; }; f"
+    cleanup = "!f() { git branch -D `git branch | grep pr`; }; f"
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true
+  process = git-lfs filter-process
+[init]
+  defaultBranch = main
