@@ -8,6 +8,10 @@ function quickenv
       export DB_PASSWORD=(aws ssm get-parameter --with-decryption --name /passwords/geo_db_password | jq -r .Parameter.Value)
       export DB_PORT=5432
       export DB_USER=geo
+      export DATABASE_URL="postgres://$DB_USER:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_NAME"
+      export PGHOST=$DB_HOST
+      export PGUSER=$DB_USER
+      export PGPASS=$DB_PASSWORD
     case osprod
       echo "setting osprod env"
       awsenv openstates
@@ -16,6 +20,10 @@ function quickenv
       export DB_PASSWORD=(aws ssm get-parameter --with-decryption --name /bobsled/backups/PGPASSWORD | jq -r .Parameter.Value)
       export DB_PORT=5432
       export DB_USER=openstates
+      export DATABASE_URL="postgres://$DB_USER:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_NAME"
+      export PGHOST=$DB_HOST
+      export PGUSER=$DB_USER
+      export PGPASS=$DB_PASSWORD
     case oslocal
       echo "setting oslocal env"
       export DB_HOST=localhost
@@ -23,12 +31,12 @@ function quickenv
       export DB_PASSWORD=openstates
       export DB_PORT=5405
       export DB_USER=openstates
+      export DATABASE_URL="postgres://$DB_USER:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_NAME"
+      export PGHOST=$DB_HOST
+      export PGUSER=$DB_USER
+      export PGPASS=$DB_PASSWORD
     case '*'
       echo "no such quickenv"
   end
 
-  export DATABASE_URL="postgres://$DB_USER:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_NAME"
-  export PGHOST=$DB_HOST
-  export PGUSER=$DB_USER
-  export PGPASS=$DB_PASSWORD
 end
