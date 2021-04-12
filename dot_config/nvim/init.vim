@@ -1,7 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 """ essentials
 Plug 'christoomey/vim-tmux-navigator'   " for tmux navigation
-"Plug 'ctrlpvim/ctrlp.vim'              " ctrl-p to fast find files
 Plug 'junegunn/fzf'                     " find files
 Plug 'junegunn/fzf.vim'
 Plug 'konfekt/FastFold'
@@ -91,7 +90,7 @@ autocmd FileType python setlocal shiftwidth=4 tabstop=4
 " tnoremap <Esc> <C-\><C-n>
 
 """ plugin config
-nmap <C-P> :FZF<CR>
+nmap <C-P> :GFiles<CR>
 :command Fix ALEFix
 let g:ale_fixers = {'python': ['black'], 'javascript': ['prettier'], 'json': ['prettier']}
 let g:ale_linters = {'python': ['flake8'], 'javascript': ['eslint']}
@@ -101,7 +100,6 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:neomake_python_enabled_makers = ['flake8']
 let g:airline#extensions#tabline#enabled = 1
 let g:deoplete#enable_at_startup = 1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:neoformat_enabled_python = ['black']
 let g:neoformat_enabled_javascript = ['prettier']
 "call deoplete#custom#set('jedi', 'debug_enabled', 1)
