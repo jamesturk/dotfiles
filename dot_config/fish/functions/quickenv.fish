@@ -36,8 +36,20 @@ function quickenv
       export PGHOST=$DB_HOST
       export PGUSER=$DB_USER
       export PGPASS=$DB_PASSWORD
+    case bobsled
+      echo "setting bobsled env"
+      export BOBSLED_SECRET_KEY="not-important"
+      export BOBSLED_GITHUB_API_KEY=(ssm-param /bobsled-web/GITHUB_API_KEY)
+      export BOBSLED_ENVIRONMENT_PROVIDER=ParameterStoreEnvironmentProvider
+      export BOBSLED_ENVIRONMENT_PARAMSTORE_PREFIX=/bobsled
+      export BOBSLED_CONFIG_GITHUB_USER=openstates
+      export BOBSLED_CONFIG_GITHUB_REPO=task-definitions
+      export BOBSLED_TASKS_DIRNAME=tasks
+      export BOBSLED_ENVIRONMENT_FILENAME=environments.yml
+      export BOBSLED_STORAGE=DatabaseStorage
+      export BOBSLED_DATABASE_URI=(ssm-param /bobsled-web/DATABASE_URL)
     case '*'
-      echo "no such quickenv"
+      echo "no such quickenv: osgeo, osprod, oslocal, bobsled"
   end
 
 end
