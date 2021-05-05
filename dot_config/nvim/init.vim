@@ -17,16 +17,11 @@ Plug 'dense-analysis/ale'               " language server features
 Plug 'tpope/vim-fugitive'               " :Git
 Plug 'tpope/vim-rhubarb'                " :GitBrowse
 
-""" old IDE-type stuff
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   " autocomplete
-"Plug 'zchee/deoplete-jedi'
-"Plug 'nikvdp/neomux'       " better vim terminals
-"Plug 'neomake/neomake'     " running outside programs async (linting)
-"Plug 'sbdchd/neoformat'    " autoformatting
-
 """ experiment of not using tmux
+"Plug 'nikvdp/neomux'       " better vim terminals
 "Plug 'gcmt/taboo.vim'       " tab renaming/etc.
 "Plug 'majutsushi/tagbar'   " tag outline viewer
+
 call plug#end()
 
 """ colorscheme
@@ -76,6 +71,9 @@ autocmd filetype go set listchars=tab:\ \ ,trail:\
 autocmd filetype python normal zR
 autocmd filetype python set colorcolumn=99
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
+augroup filetypedetect
+  au BufNewFile,BufRead justfile setf make
+augroup END
 " autocmd! BufWritePost * Neomake
 
 """ better navigation (without tmux)
@@ -97,13 +95,7 @@ let g:ale_linters = {'python': ['flake8'], 'javascript': ['eslint']}
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:neomake_python_enabled_makers = ['flake8']
 let g:airline#extensions#tabline#enabled = 1
-let g:deoplete#enable_at_startup = 1
-let g:neoformat_enabled_python = ['black']
-let g:neoformat_enabled_javascript = ['prettier']
-"call deoplete#custom#set('jedi', 'debug_enabled', 1)
-"call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
 
 """ custom commands
 
