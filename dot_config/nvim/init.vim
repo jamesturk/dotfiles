@@ -90,7 +90,7 @@ augroup END
 """ plugin config
 nmap <C-P> :GFiles<CR>
 :command Fix ALEFix
-let g:ale_fixers = {'python': ['black'], 'javascript': ['prettier'], 'json': ['prettier']}
+let g:ale_fixers = {'python': ['black'], 'javascript': ['prettier'], 'json': ['prettier'], 'c': ['clang-format'], 'cpp': ['clang-format'] }
 let g:ale_linters = {'python': ['flake8'], 'javascript': ['eslint']}
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
