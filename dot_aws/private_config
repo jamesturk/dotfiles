@@ -1,0 +1,6 @@
+[profile james]
+region=us-east-1
+[profile openstates]
+region=us-east-1
+[preview]
+cloudfront = true
