@@ -1,4 +1,8 @@
 call plug#begin('~/.config/nvim/plugged')
+""" nvim 0.5 stuff
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+Plug 'neovim/nvim-lspconfig'
 """ essentials
 Plug 'christoomey/vim-tmux-navigator'   " for tmux navigation
 Plug 'junegunn/fzf'                     " find files
