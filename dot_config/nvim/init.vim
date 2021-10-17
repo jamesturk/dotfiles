@@ -20,7 +20,7 @@ Plug 'vim-airline/vim-airline'          " lightweight bottom bar
 Plug 'dense-analysis/ale'               " language server features
 Plug 'tpope/vim-fugitive'               " :Git
 Plug 'tpope/vim-rhubarb'                " :GitBrowse
-
+Plug 'OmniSharp/omnisharp-vim'
 """ experiment of not using tmux
 "Plug 'nikvdp/neomux'       " better vim terminals
 "Plug 'gcmt/taboo.vim'       " tab renaming/etc.
@@ -94,11 +94,12 @@ augroup END
 """ plugin config
 nmap <C-P> :GFiles<CR>
 :command Fix ALEFix
-let g:ale_fixers = {'python': ['black'], 'javascript': ['prettier'], 'json': ['prettier'], 'c': ['clang-format'], 'cpp': ['clang-format'] }
-let g:ale_linters = {'python': ['flake8'], 'javascript': ['eslint']}
+let g:ale_fixers = {'python': ['black'], 'javascript': ['prettier'], 'json': ['prettier'], 'c': ['clang-format'], 'cpp': ['clang-format'], 'cs': ['uncrustify'] }
+let g:ale_linters = {'python': ['flake8'], 'javascript': ['eslint'], 'cs' :['OmniSharp']}
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_c_uncrustify_options = '-c ~/.config/nvim/uncrustify.cfg -l CS'
 let g:airline#extensions#tabline#enabled = 1
 
 """ custom commands
