@@ -5,6 +5,7 @@
     user = jamesturk
 [core]
     excludesfile = ~/.config/git/ignore
+	autocrlf = input
 [color]
     branch = auto
     diff = auto
