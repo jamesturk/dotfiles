@@ -7,5 +7,4 @@ set PATH ~/.dotnet/tools $PATH
 set HOMEBREW_NO_AUTO_UPDATE 1
 
 source ~/.cargo/env
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
 source /usr/local/opt/asdf/asdf.fish
