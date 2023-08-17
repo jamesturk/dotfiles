@@ -9,7 +9,9 @@ set HOMEBREW_NO_AUTO_UPDATE 1
 
 #source ~/.cargo/env
 #source /usr/local/opt/asdf/asdf.fish
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
+if test -f /opt/homebrew/opt/asdf/libexec/asdf.fish
+    source /opt/homebrew/opt/asdf/libexec/asdf.fish
+end
 
 # Created by `pipx` on 2022-09-13 17:47:04
 set PATH $PATH /Users/jamesturk/.local/bin
