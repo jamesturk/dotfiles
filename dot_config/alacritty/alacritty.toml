@@ -4,9 +4,8 @@ normal = { family = "UbuntuSansMono Nerd Font", style = "Regular" }
 
 
 [window]
-opacity = 1.9
-decorations = "Full"
-#startup_mode = "SimpleFullscreen"
+#opacity = 0.9
+decorations = "buttonless"
 startup_mode = "Maximized"
 option_as_alt = "OnlyLeft"
 
