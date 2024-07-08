@@ -1,5 +1,5 @@
 #!/bin/sh
-export PATH=/usr/local/bin/
+#export PATH=/usr/local/bin/
 # Persistent screen id: 1F6D033A-15DC-CEF4-1279-94E0518C9775
 # Contextual screen id: 459105478
 # Serial screen id: s370046

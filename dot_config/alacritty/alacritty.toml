@@ -1,0 +1,7 @@
+[font]
+size = 13
+normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
+
+[window]
+opacity = 1.9
+decorations = "Full"

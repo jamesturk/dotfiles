@@ -5,6 +5,8 @@ set -g fish_greeting ""
 set PATH ~/.bin/ $PATH
 set PATH ~/.dotnet/tools $PATH
 set PATH "/opt/homebrew/opt/sqlite/bin" $PATH
+set PATH ~/.pyenv/shims $PATH
+set PATH "/opt/homebrew/Cellar/openjdk/21.0.2/bin/" $PATH
 set HOMEBREW_NO_AUTO_UPDATE 1
 
 #source ~/.cargo/env

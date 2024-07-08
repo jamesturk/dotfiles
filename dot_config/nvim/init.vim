@@ -9,6 +9,7 @@ Plug 'junegunn/fzf'                     " find files
 Plug 'junegunn/fzf.vim'
 Plug 'konfekt/FastFold'
 Plug 'sheerun/vim-polyglot'             " language features
+Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-commentary'             " gc to comment
 Plug 'tpope/vim-surround'               " cs - change surround / ds - delete surround
 Plug 'tpope/vim-repeat'                 " remap . to repeat plugin commands
