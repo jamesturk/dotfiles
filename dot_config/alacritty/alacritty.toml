@@ -1,7 +1,15 @@
 [font]
 size = 13
-normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
+normal = { family = "UbuntuSansMono Nerd Font", style = "Regular" }
+
 
 [window]
 opacity = 1.9
 decorations = "Full"
+#startup_mode = "SimpleFullscreen"
+startup_mode = "Maximized"
+option_as_alt = "OnlyLeft"
+
+[shell]
+program = "/opt/homebrew/bin/tmux"
+args = ["new-session", "-A", "-s", "main"]
