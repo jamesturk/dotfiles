@@ -10,5 +10,9 @@ startup_mode = "Maximized"
 option_as_alt = "OnlyLeft"
 
 [shell]
+{{ if eq .chezmoi.os "darwin" }}
 program = "/opt/homebrew/bin/tmux"
+{{ else }}
+program = "/usr/bin/tmux"
+{{ end }}
 args = ["new-session", "-A", "-s", "main"]
