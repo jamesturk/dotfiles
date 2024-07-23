@@ -5,9 +5,9 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": [ "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state",  "battery", "clock", "tray"],
+    "modules-right": [ "idle_inhibitor", "pulseaudio", "custom/tailscale", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -44,6 +44,9 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
+    "sway/window": {
+        "all-outputs": true
+      },
    // "mpd": {
    //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
    //     "format-disconnected": "Disconnected ",
@@ -120,9 +123,6 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-    //"battery#bat2": {
-    //    "bat": "BAT2"
-    //},
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -162,6 +162,12 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
+    },
+    "custom/tailscale": {
+        "exec": "$HOME/.config/waybar/tailscale.py",
+        "refresh": 120,
+        "return-type": "json",
+        "signal": 9
+     }
 }
 

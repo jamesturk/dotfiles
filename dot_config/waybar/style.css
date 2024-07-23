@@ -264,3 +264,13 @@ label:focus {
 #scratchpad.empty {
 	background-color: transparent;
 }
+
+.tailscale-only {
+  background: #bb8800;
+}
+.tailscale-off {
+  background: #990000;
+}
+.tailscale-mullvad {
+  background: #009900;
+}
