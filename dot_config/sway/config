@@ -12,7 +12,8 @@ set $term alacritty # foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | wmenu | xargs swaymsg exec --
+# set $menu dmenu_path | wmenu | xargs swaymsg exec --
+set $menu fuzzel | xargs swaymsg exec --
 
 include /etc/sway/config-vars.d/*
 
@@ -68,8 +69,12 @@ input "type:keyboard" {
     # Kill focused window
     bindsym $mod+Shift+q kill
 
-    # Start your launcher
+    # Start launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+space exec $menu
+
+    # browser
+    #bindsym $mod+b exec vivaldi
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -155,7 +160,7 @@ input "type:keyboard" {
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    # bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
