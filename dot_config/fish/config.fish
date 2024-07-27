@@ -18,3 +18,6 @@ end
 # Created by `pipx` on 2022-09-13 17:47:04
 set PATH $PATH /Users/jamesturk/.local/bin
 set PATH $PATH ~/.cargo/bin
+
+# Created by `pipx` on 2024-07-27 02:29:59
+set PATH $PATH /home/braid/.local/bin
