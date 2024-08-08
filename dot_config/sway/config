@@ -2,17 +2,13 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
 set $term alacritty # foot
-# Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-# set $menu dmenu_path | wmenu | xargs swaymsg exec --
 set $menu fuzzel | xargs swaymsg exec --
 
 include /etc/sway/config-vars.d/*
@@ -23,6 +19,16 @@ include /etc/sway/config-vars.d/*
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output * bg /home/braid/.config/sway/VLA_Moonset_NIK_0991.jpg fill
 
+output eDP-1 position 0,0
+# monitor 1
+output 'LG Electronics LG HDR 4K 0x0005A57E' resolution 3840x2160 position 1920,0 scale 2
+# monitor 2
+output 'LG Electronics LG HDR 4K 0x0005FB4D' resolution 3840x2160 position 3480,0 scale 2
+bindswitch --reload --locked lid:on output eDP-1 disable
+bindswitch --reload --locked lid:off output eDP-1 enable
+# TODO: https://github.com/swaywm/sway/wiki#hidpi has instructions
+# to help with reloading/activation when in clamshell
+
 font pango:Ubuntu Mono 10
 #
 # Example configuration:
@@ -30,19 +36,6 @@ font pango:Ubuntu Mono 10
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
 #
@@ -87,6 +80,8 @@ input "type:keyboard" {
     floating_modifier $mod normal
 
     # Reload the configuration file
+    #bindsym $mod+Shift+c exec swaynag -m "ok i'm reloaded" 
+    # reload
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
@@ -205,5 +200,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec waybar
+exec syncthingtray
+# idle: lock at 900 sec, screen off at 910, screen on at unlock
+exec swayidle -w \
+  timeout 900 'swaylock -fF' \
+  timeout 910 'swaymsg "output * power off"' \
+  resume 'swaymsg "output * power on"' \
+  before-sleep 'swaylock -fF'
 
-include /etc/sway/config.d/*
+#include /etc/sway/config.d/*
